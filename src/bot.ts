@@ -1,6 +1,6 @@
 import { Bot } from "grammy";
 
-import * as express from 'express';
+import express from 'express';
 
 // Create a bot using the Telegram token
 const bot = new Bot(process.env.TELEGRAM_TOKEN || "");

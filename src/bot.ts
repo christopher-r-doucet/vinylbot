@@ -223,6 +223,162 @@ const rollItResponses: RollItResponse[] = [
     source: "https://m.media-amazon.com/images/I/81evsr3Oq0L._AC_UY218_.jpg",
     caption: "Led Zeppelin IV - Led Zeppelin",
   },
+  {
+    source: "https://m.media-amazon.com/images/I/81rYyY4k+QL._AC_UY218_.jpg",
+    caption: "Future Nostalgia - Dua Lipa",
+  },
+  {
+    source: "https://m.media-amazon.com/images/I/31IUpHPcu7L._AC_UY218_.jpg",
+    caption: "The Lumineers - The Lumineers",
+  },
+  {
+    source: "https://m.media-amazon.com/images/I/51YNq82MseL._AC_UY218_.jpg",
+    caption: "Cleopatra - The Lumineers",
+  },
+  {
+    source: "https://m.media-amazon.com/images/I/5147Fzp0xtL._AC_UY218_.jpg",
+    caption: "Legend - Bob Marley & The Wailers",
+  },
+  {
+    source: "https://m.media-amazon.com/images/I/713fT9qE4WL._AC_UY218_.jpg",
+    caption: "Oracular Spectacular - MGMT",
+  },
+  {
+    source: "https://m.media-amazon.com/images/I/713kHwQL5uL._AC_UY218_.jpg",
+    caption: "Good News For People Who Love Bad News - Modest Mouse",
+  },
+  {
+    source: "https://m.media-amazon.com/images/I/61cdceINvAS._AC_UY218_.jpg",
+    caption: "Thelonious Monk Quartet with John Coltrane at Carnegie Hall - John Coltrane & Thelonious Monk",
+  },
+  {
+    source: "https://m.media-amazon.com/images/I/81LpnHiP9IL._SY355_.jpg",
+    caption: "Sigh No More - Mumford & Sons",
+  },
+  {
+    source: "https://m.media-amazon.com/images/I/71uKit-g7vL._AC_UY218_.jpg",
+    caption: "Three Cheers for Sweet Revenge - My Chemical Romance",
+  },
+  {
+    source: "https://m.media-amazon.com/images/I/81nPJjPmtOL._AC_UY218_.jpg",
+    caption: "The Black Parade - My Chemical Romance",
+  },
+  {
+    source: "https://m.media-amazon.com/images/I/91eUoYYAkmL._AC_UY218_.jpg",
+    caption: "Alligator - The National",
+  },
+  {
+    source: "https://m.media-amazon.com/images/I/71kqZjzE0zL._AC_UY218_.jpg",
+    caption: "Boxer - The National",
+  },
+  {
+    source: "https://m.media-amazon.com/images/I/71086HkUo2L._AC_UY218_.jpg",
+    caption: "High Violet - The National",
+  },
+  {
+    source: "https://m.media-amazon.com/images/I/61IhBVKRPKL._AC_UY218_.jpg",
+    caption: "I Am Easy To Find - The National",
+  },
+  {
+    source: "https://m.media-amazon.com/images/I/81vaOIWJkcL._AC_UY218_.jpg",
+    caption: "In The Aeroplane Over The Sea - Neutral Milk Hotel",
+  },
+  {
+    source: "https://m.media-amazon.com/images/I/51ja37EsspL._AC_UY218_.jpg",
+    caption: "Bleach - Nirvana",
+  },
+  {
+    source: "https://m.media-amazon.com/images/I/91G5ndi8yFL._AC_UY218_.jpg",
+    caption: "Nevermind - Nirvana", 
+  },
+  {
+    source: "https://m.media-amazon.com/images/I/51SHWejkmgL._AC_UY218_.jpg",
+    caption: "In Utero - Nirvana",
+  },
+  {
+    source: "https://m.media-amazon.com/images/I/31ZNXH5DDBL._AC_UY218_.jpg",
+    caption: "Ready To Die - Notorious B.I.G.",
+  },
+  {
+    source: "https://m.media-amazon.com/images/I/614MDTqkjhL._AC_UY218_.jpg",
+    caption: "Wolfgang Amadeus Phoenix - Phoenix",
+  },
+  {
+    source: "https://m.media-amazon.com/images/I/61xIlFDKtGL._AC_UY218_.jpg",
+    caption: "The Dark Side of the Moon - Pink Floyd",
+  },
+  {
+    source: "https://m.media-amazon.com/images/I/71J+854Du+L._AC_UY218_.jpg",
+    caption: "The Wall - Pink Floyd",
+  },
+  {
+    source: "https://m.media-amazon.com/images/I/81xAwQV7KWL._AC_UY218_.jpg",
+    caption: "A Foor In The Door: The Best of Pink Floyd - Pink Floyd",
+  },
+  {
+    source: "https://m.media-amazon.com/images/I/51Nc40BMGnL._AC_UY218_.jpg",
+    caption: "OK Computer - Radiohead",
+  },
+  {
+    source: "https://m.media-amazon.com/images/I/A1MwaIeBpwL._AC_UY218_.jpg",\
+    caption: "In Rainbows - Radiohead",
+  },
+  {
+    source: "https://m.media-amazon.com/images/I/81ApIxyhiAL._AC_UY218_.jpg",
+    caption: "Rage Against The Machine - Rage Against The Machine",
+  },
+  {
+    source: "https://m.media-amazon.com/images/I/61BaJiqaPmL._AC_UY218_.jpg",
+    caption: "Transformer - Lou Reed",
+  },
+  {
+    source: "https://m.media-amazon.com/images/I/91bNHHxyxHL._AC_UY218_.jpg",
+    caption: "Beggar's Banquet - The Rolling Stones",
+  },
+  {
+    source: "https://m.media-amazon.com/images/I/91O115G5xbL._AC_UY218_.jpg",
+    caption: "Let It Bleed - The Rolling Stones",
+  },
+  {
+    source: "https://m.media-amazon.com/images/I/71BKDc1-DWL._AC_UY218_.jpg",
+    caption: "Exile On Main Street - The Rolling Stones",
+  },
+  {
+    source: "https://m.media-amazon.com/images/I/616kClcArAL._AC_UY218_.jpg",
+    caption: "It's Only Rock 'n Roll - The Rolling Stones", 
+  },
+  {
+    source: "https://m.media-amazon.com/images/I/41DQ1kQr1tL._AC_UY218_.jpg",
+    caption: "2112 - Rush",
+  },
+  {
+    source: "https://m.media-amazon.com/images/I/81kPRM-tzoL._AC_UY218_.jpg",
+    caption: "Greatest Hits - Simon & Garfunkel",
+  },
+  {
+    source: "https://m.media-amazon.com/images/I/81hgbB9yD4L._AC_UY218_.jpg",
+    caption: "Greatest Hits - Bruce Springsteen",
+  },
+  {
+    source: "https://m.media-amazon.com/images/I/710VPV3orpL._AC_UY218_.jpg",
+    caption: "White Blood Cells - The White Stripes",
+  },
+  {
+    source: "https://m.media-amazon.com/images/I/71-J4jMNfCL._AC_UY218_.jpg",
+    caption: "Yankee Hotel Foxtrot - Wilco",
+  },
+  {
+    source: "https://m.media-amazon.com/images/I/51p1MDFWo5L._AC_UY218_.jpg",
+    caption: "Talking Book - Stevie Wonder",
+  },
+  {
+    source: "https://m.media-amazon.com/images/I/81hjAJmbAnL._AC_UY218_.jpg",
+    caption: "Everybody Knows This Is Nowhere - Neil Young",
+  },
+  {
+    source: "https://m.media-amazon.com/images/I/41TFRMZr6ZL._AC_UY218_.jpg",
+    caption: "NY Greatest Hits - Neil Young",
+  },
 ];
 
 bot.command("blaze", (ctx) => { 

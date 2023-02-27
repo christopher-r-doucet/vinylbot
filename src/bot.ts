@@ -3,7 +3,7 @@ import { chunk } from "lodash";
 import express from 'express';
 
 // Create a bot using the Telegram token
-const bot = new Bot(process.env.TELEGRAM_TOKEN || "production");
+const bot = new Bot(process.env.TELEGRAM_TOKEN || "");
 
 // Handle the /yo command to greet the user
 bot.command("yo", (ctx) => ctx.reply(`Yo ${ctx.from?.username}`));

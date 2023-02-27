@@ -1,9 +1,6 @@
-import { Bot, InlineKeyboard, webhookCallback } from "grammy";
-import { chunk } from "lodash";
-import express from "express";
-import { applyTextEffect, Variant } from "./textEffects";
+import { Bot } from "grammy";
 
-import type { Variant as TextEffectVariant } from "./textEffects";
+import express from "express";
 
 // Create a bot using the Telegram token
 const bot = new Bot(process.env.TELEGRAM_TOKEN || "");
@@ -11,185 +8,119 @@ const bot = new Bot(process.env.TELEGRAM_TOKEN || "");
 // Handle the /yo command to greet the user
 bot.command("yo", (ctx) => ctx.reply(`Yo ${ctx.from?.username}`));
 
-// Handle the /effect command to apply text effects using an inline keyboard
-type Effect = { code: TextEffectVariant; label: string };
-const allEffects: Effect[] = [
-  {
-    code: "w",
-    label: "Monospace",
+// Handle the /rollit command to fetch a random image from local storage
+type RollItResponse = { source: string ; caption: string }; 
+const rollItResponses: RollItResponse[] = [ 
+  { 
+    source: "https://imgur.com/a/u8MG5uB.jpg",
+    caption: "25 - Adele",
+  },
+  { 
+    source: "https://imgur.com/a/YtqrJyJ",
+    caption: "30 - Adele",
+  },
+  { 
+    source: "https://imgur.com/a/r7jWr4y",
+    caption: "Funeral - Arcade Fire",
   },
   {
-    code: "b",
-    label: "Bold",
+    source: "https://imgur.com/a/ANq9BcL",
+    caption: "Neon Bible - Arcade Fire",
   },
   {
-    code: "i",
-    label: "Italic",
+    source: "https://imgur.com/a/C8vOVRI",
+    caption: "The Suburbs - Arcade Fire",
   },
   {
-    code: "d",
-    label: "Doublestruck",
+    source: "https://imgur.com/a/GE6GuZH",
+    caption: "Reflektor - Arcade Fire",
   },
   {
-    code: "o",
-    label: "Circled",
+    source: "https://imgur.com/a/cyhSQj9",
+    caption: "Pet Sounds - The Beach Boys ",
   },
   {
-    code: "q",
-    label: "Squared",
+    source: "https://imgur.com/a/NHmvDM",
+    caption: "Abbey Road - The Beatles",
+  },
+  {
+    source: "https://imgur.com/a/Zvwwiv2",
+    caption: "Magical Mystery Tour - The Beatles",
+  },
+  {
+    source: "https://imgur.com/a/rjGnxnC",
+    caption: "Depression Cherry - Beach House",
+  },
+  {
+    source: "https://imgur.com/a/jyVuzAT",
+    caption: "Lemonade - Beyonce",
+  },
+  {
+    source: "https://imgur.com/a/jyVuzAT",
+    caption: "Lemonade - Beyonce",
+  },
+  {
+    source: "https://imgur.com/a/qA6ux4n",
+    caption: "The Rise and Fall of Ziggy Stardust and the Spiders from Mars - David Bowie",
+  },
+  {
+    source: "https://imgur.com/a/qA6ux4n",
+    caption: "The Rise and Fall of Ziggy Stardust and the Spiders from Mars - David Bowie",
+  },
+  {
+    source: "https://imgur.com/a/TritPDS",
+    caption: "Inside - Bo Burnham",
+  },
+  {
+    source: "https://imgur.com/a/q7dntvw",
+    caption: "Coming Home - Leon Bridges",
+  },
+  {
+    source: "https://imgur.com/a/q7dntvw",
+    caption: "Coming Home - Leon Bridges",
+  },
+  {
+    source: "https://imgur.com/a/SKGFnYf",
+    caption: "London Calling - The Clash",
+  },
+  {
+    source: "https://imgur.com/a/RZirfEy",
+    caption: "A Rush of Blood to the Head - Coldplay",
+  },
+  {
+    source: "https://imgur.com/a/f8hkaZa",
+    caption: "Viva La Vida - Coldplay",
+  },
+  {
+    source: "https://imgur.com/a/3lKorj3",
+    caption: "Blue World - John Coltrane",
+  },
+  {
+    source: "https://m.media-amazon.com/images/I/81w01y1TnCL._AC_UY218_.jpg",
+    caption: "Crosby Stills & Nash - Crosby Stills & Nash",
   },
 ];
 
-const effectCallbackCodeAccessor = (effectCode: TextEffectVariant) =>
-  `effect-${effectCode}`;
-
-const effectsKeyboardAccessor = (effectCodes: string[]) => {
-  const effectsAccessor = (effectCodes: string[]) =>
-    effectCodes.map((code) =>
-      allEffects.find((effect) => effect.code === code)
-    );
-  const effects = effectsAccessor(effectCodes);
-
-  const keyboard = new InlineKeyboard();
-  const chunkedEffects = chunk(effects, 3);
-  for (const effectsChunk of chunkedEffects) {
-    for (const effect of effectsChunk) {
-      effect &&
-        keyboard.text(effect.label, effectCallbackCodeAccessor(effect.code));
-    }
-    keyboard.row();
-  }
-
-  return keyboard;
-};
-
-const textEffectResponseAccessor = (
-  originalText: string,
-  modifiedText?: string
-) =>
-  `Original: ${originalText}` +
-  (modifiedText ? `\nModified: ${modifiedText}` : "");
-
-const parseTextEffectResponse = (
-  response: string
-): {
-  originalText: string;
-  modifiedText?: string;
-} => {
-  const originalText = (response.match(/Original: (.*)/) as any)[1];
-  const modifiedTextMatch = response.match(/Modified: (.*)/);
-
-  let modifiedText;
-  if (modifiedTextMatch) modifiedText = modifiedTextMatch[1];
-
-  if (!modifiedTextMatch) return { originalText };
-  else return { originalText, modifiedText };
-};
-
-bot.command("effect", (ctx) =>
-  ctx.reply(textEffectResponseAccessor(ctx.match), {
-    reply_markup: effectsKeyboardAccessor(
-      allEffects.map((effect) => effect.code)
-    ),
-  })
-);
-
-// Handle inline queries
-const queryRegEx = /effect (monospace|bold|italic) (.*)/;
-bot.inlineQuery(queryRegEx, async (ctx) => {
-  const fullQuery = ctx.inlineQuery.query;
-  const fullQueryMatch = fullQuery.match(queryRegEx);
-  if (!fullQueryMatch) return;
-
-  const effectLabel = fullQueryMatch[1];
-  const originalText = fullQueryMatch[2];
-
-  const effectCode = allEffects.find(
-    (effect) => effect.label.toLowerCase() === effectLabel.toLowerCase()
-  )?.code;
-  const modifiedText = applyTextEffect(originalText, effectCode as Variant);
-
-  await ctx.answerInlineQuery(
-    [
-      {
-        type: "article",
-        id: "text-effect",
-        title: "Text Effects",
-        input_message_content: {
-          message_text: `Original: ${originalText}
-Modified: ${modifiedText}`,
-          parse_mode: "HTML",
-        },
-        reply_markup: new InlineKeyboard().switchInline("Share", fullQuery),
-        url: "http://t.me/EludaDevSmarterBot",
-        description: "Create stylish Unicode text, all within Telegram.",
-      },
-    ],
-    { cache_time: 30 * 24 * 3600 } // one month in seconds
-  );
+bot.command("blaze", (ctx) => { 
+  const response = rollItResponses[Math.floor(Math.random() * 100 % rollItResponses.length)];
+  ctx.replyWithPhoto(response.source, { caption: response.caption });
 });
-
-// Return empty result list for other queries.
-bot.on("inline_query", (ctx) => ctx.answerInlineQuery([]));
-
-// Handle text effects from the effect keyboard
-for (const effect of allEffects) {
-  const allEffectCodes = allEffects.map((effect) => effect.code);
-
-  bot.callbackQuery(effectCallbackCodeAccessor(effect.code), async (ctx) => {
-    const { originalText } = parseTextEffectResponse(ctx.msg?.text || "");
-    const modifiedText = applyTextEffect(originalText, effect.code);
-
-    await ctx.editMessageText(
-      textEffectResponseAccessor(originalText, modifiedText),
-      {
-        reply_markup: effectsKeyboardAccessor(
-          allEffectCodes.filter((code) => code !== effect.code)
-        ),
-      }
-    );
-  });
-}
-
-// Handle the /about command
-const aboutUrlKeyboard = new InlineKeyboard().url(
-  "Host your own bot for free.",
-  "https://cyclic.sh/"
-);
 
 // Suggest commands in the menu
 bot.api.setMyCommands([
-  { command: "yo", description: "Be greeted by the bot" },
-  {
-    command: "effect",
-    description: "Apply text effects on the text. (usage: /effect [text])",
-  },
+  { command: "/blaze", description: "get a random vinyl" },
 ]);
 
-// Handle all other messages and the /start command
-const introductionMessage = `Hello! I'm a Telegram bot.
-I'm powered by Cyclic, the next-generation serverless computing platform.
-
-<b>Commands</b>
-/yo - Be greeted by me
-/effect [text] - Show a keyboard to apply text effects to [text]`;
-
-const replyWithIntro = (ctx: any) =>
-  ctx.reply(introductionMessage, {
-    reply_markup: aboutUrlKeyboard,
-    parse_mode: "HTML",
-  });
-
-bot.command("start", replyWithIntro);
-bot.on("message", replyWithIntro);
+bot.on("message", (ctx) => {
+  ctx.reply("Error. Please /blaze to get a random vinyl.");
+});
+bot.command("start");
 
 // Start the server
 if (process.env.NODE_ENV === "production") {
   // Use Webhooks for the production server
   const app = express();
   app.use(express.json());
-  app.use(webhookCallback(bot, "express"));
-
   const PORT = process.env.PORT || 3000;
   app.listen(PORT, () => {
     console.log(`Bot listening on port ${PORT}`);

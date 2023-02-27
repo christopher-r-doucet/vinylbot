@@ -320,7 +320,7 @@ const rollItResponses: RollItResponse[] = [
     caption: "OK Computer - Radiohead",
   },
   {
-    source: "https://m.media-amazon.com/images/I/A1MwaIeBpwL._AC_UY218_.jpg",\
+    source: "https://m.media-amazon.com/images/I/A1MwaIeBpwL._AC_UY218_.jpg",
     caption: "In Rainbows - Radiohead",
   },
   {

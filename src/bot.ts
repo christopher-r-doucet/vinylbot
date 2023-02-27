@@ -12,92 +12,216 @@ bot.command("yo", (ctx) => ctx.reply(`Yo ${ctx.from?.username}`));
 type RollItResponse = { source: string ; caption: string }; 
 const rollItResponses: RollItResponse[] = [ 
   { 
-    source: "https://imgur.com/a/u8MG5uB.jpg",
+    source: "https://m.media-amazon.com/images/I/81q0mwIoc0L._AC_UY218_.jpg",
     caption: "25 - Adele",
   },
   { 
-    source: "https://imgur.com/a/YtqrJyJ",
+    source: "https://m.media-amazon.com/images/I/71-llhQmneL._AC_UY218_.jpg",
     caption: "30 - Adele",
   },
   { 
-    source: "https://imgur.com/a/r7jWr4y",
+    source: "https://m.media-amazon.com/images/I/7180HzQtQbL._AC_UY218_.jpg",
     caption: "Funeral - Arcade Fire",
   },
   {
-    source: "https://imgur.com/a/ANq9BcL",
+    source: "https://m.media-amazon.com/images/I/61E6rc-6j0L._AC_UY218_.jpg",
     caption: "Neon Bible - Arcade Fire",
   },
   {
-    source: "https://imgur.com/a/C8vOVRI",
+    source: "https://m.media-amazon.com/images/I/91eP-zjKRqL._AC_UY218_.jpg",
     caption: "The Suburbs - Arcade Fire",
   },
   {
-    source: "https://imgur.com/a/GE6GuZH",
+    source: "https://m.media-amazon.com/images/I/8164lCYolQL._AC_UY218_.jpg",
     caption: "Reflektor - Arcade Fire",
   },
   {
-    source: "https://imgur.com/a/cyhSQj9",
+    source: "https://m.media-amazon.com/images/I/71kOQrqROTL._AC_UY218_.jpg",
     caption: "Pet Sounds - The Beach Boys ",
   },
   {
-    source: "https://imgur.com/a/NHmvDM",
+    source: "https://m.media-amazon.com/images/I/81GAlfut1yL._AC_UY218_.jpg",
     caption: "Abbey Road - The Beatles",
   },
   {
-    source: "https://imgur.com/a/Zvwwiv2",
+    source: "https://m.media-amazon.com/images/I/91Sx7bFxVmL._AC_UY218_.jpg",
     caption: "Magical Mystery Tour - The Beatles",
   },
   {
-    source: "https://imgur.com/a/rjGnxnC",
+    source: "https://m.media-amazon.com/images/I/81i3kkRsMTL._AC_UY218_.jpg",
     caption: "Depression Cherry - Beach House",
   },
   {
-    source: "https://imgur.com/a/jyVuzAT",
+    source: "https://m.media-amazon.com/images/I/814Fw0v0S8L._AC_UY218_.jpg",
     caption: "Lemonade - Beyonce",
   },
   {
-    source: "https://imgur.com/a/jyVuzAT",
-    caption: "Lemonade - Beyonce",
-  },
-  {
-    source: "https://imgur.com/a/qA6ux4n",
+    source: "https://m.media-amazon.com/images/I/91+9OVN138L._AC_UY218_.jpg",
     caption: "The Rise and Fall of Ziggy Stardust and the Spiders from Mars - David Bowie",
   },
   {
-    source: "https://imgur.com/a/qA6ux4n",
-    caption: "The Rise and Fall of Ziggy Stardust and the Spiders from Mars - David Bowie",
-  },
-  {
-    source: "https://imgur.com/a/TritPDS",
+    source: "https://m.media-amazon.com/images/I/71nrh7fjBJL._AC_UY218_.jpg",
     caption: "Inside - Bo Burnham",
   },
   {
-    source: "https://imgur.com/a/q7dntvw",
+    source: "https://m.media-amazon.com/images/I/811Vcd+YOSL._AC_UY218_.jpg",
     caption: "Coming Home - Leon Bridges",
   },
   {
-    source: "https://imgur.com/a/q7dntvw",
-    caption: "Coming Home - Leon Bridges",
-  },
-  {
-    source: "https://imgur.com/a/SKGFnYf",
+    source: "https://m.media-amazon.com/images/I/71lsBqSZ5zL._AC_UY218_.jpg",
     caption: "London Calling - The Clash",
   },
   {
-    source: "https://imgur.com/a/RZirfEy",
+    source: "https://m.media-amazon.com/images/I/81H8hN+pmwL._AC_UY218_.jpg",
     caption: "A Rush of Blood to the Head - Coldplay",
   },
   {
-    source: "https://imgur.com/a/f8hkaZa",
+    source: "https://m.media-amazon.com/images/I/81f-pTGDbbL._AC_UY218_.jpg",
     caption: "Viva La Vida - Coldplay",
   },
   {
-    source: "https://imgur.com/a/3lKorj3",
+    source: "https://m.media-amazon.com/images/I/5144Nt80ztL._AC_UY218_.jpg",
     caption: "Blue World - John Coltrane",
   },
   {
     source: "https://m.media-amazon.com/images/I/81w01y1TnCL._AC_UY218_.jpg",
     caption: "Crosby Stills & Nash - Crosby Stills & Nash",
+  },
+  {
+    source: "https://m.media-amazon.com/images/I/91ML36Y33TL._AC_UY218_.jpg",
+    caption: "Chronicle - Creedence Clearwater Revival",
+  },
+  {
+    source: "https://m.media-amazon.com/images/I/81CP1j-zprL._AC_UY218_.jpg",
+    caption: "Kind of Blue - Miles Davis",
+  },
+  {
+    source: "https://m.media-amazon.com/images/I/91OAWYW2t+L._AC_UY218_.jpg",
+    caption: "Round About Midnight - Miles Davis",
+  },
+  {
+    source: "https://m.media-amazon.com/images/I/817NMar7SgL._AC_UY218_.jpg",
+    caption: "The Doors - The Doors",
+  },
+  {
+    source: "https://m.media-amazon.com/images/I/71mlUmU1TVL._AC_UY218_.jpg",
+    caption: "The Chronic - Dr. Dre",
+  },
+  {
+    source: "hhttps://m.media-amazon.com/images/I/81T0IFXtnjL._AC_UY218_.jpg",
+    caption: "Blood on the Tracks - Bob Dylan",
+  },
+  {
+    source: "https://m.media-amazon.com/images/I/91rR1W51FFL._AC_UY218_.jpg",
+    caption: "Greatest Hits - Bob Dylan",
+  },
+  {
+    source: "https://m.media-amazon.com/images/I/81tq1lfjTZL._AC_UY218_.jpg",
+    caption: "Greatest Hits - The Eagles",
+  },
+  {
+    source: "https://m.media-amazon.com/images/I/51Qie8IUzgL._AC_UY218_.jpg",
+    caption: "Hotel California - The Eagles",
+  },
+  {
+    source: "https://m.media-amazon.com/images/I/81idxQqxTlL._AC_UY218_.jpg",
+    caption: "When We Fall Asleep, Where Do We Go? - Billie Eilish",
+  },
+  {
+    source: "https://m.media-amazon.com/images/I/81SF-yIIpiL._AC_UY218_.jpg",
+    caption: "The Best of Earth, Wind & Fire, Vol. 1 - Earth, Wind & Fire",
+  },
+  {
+    source: "https://m.media-amazon.com/images/I/61aHg-YTUAL._AC_UY218_.jpg",
+    caption: "Duke Ellington & John Coltrane - Duke Ellington & John Coltrane",
+  },
+  {
+    source: "https://m.media-amazon.com/images/I/81Sw6YOnS9L._AC_UY218_.jpg",
+    caption: "Fleet Foxes - Fleet Foxes",
+  },
+  {
+    source: "https://m.media-amazon.com/images/I/91lhcK0RdxL._AC_UY218_.jpg",
+    caption: "Helplessness Blues - Fleet Foxes",
+  },
+  {
+    source: "https://m.media-amazon.com/images/I/61G0FLW7HIL._AC_UY218_.jpg",
+    caption: "The Color and the Shape - Foo Fighters",
+  },
+  {
+    source: "https://m.media-amazon.com/images/I/81PWOwTqzfL._AC_UY218_.jpg",
+    caption: "You Could Have It So Much Better - Franz Ferdinand",
+  },
+  {
+    source: "https://m.media-amazon.com/images/I/81InYXq1VDL._AC_UY218_.jpg",
+    caption: "What's Going On - Marvin Gaye",
+  },
+  {
+    source: "https://m.media-amazon.com/images/I/41JT6duMA9L._AC_UY218_.jpg",
+    caption: "Getz/Gilberto - Stan Getz & João Gilberto",
+  },
+  {
+    source: "https://m.media-amazon.com/images/I/91YyfXFsTtL._AC_UY218_.jpg",
+    caption: "Dookie - Green Day",
+  },
+  {
+    source: "https://m.media-amazon.com/images/I/51MWVgGiWdL._AC_UY218_.jpg",
+    caption: "Bleed American - Jimmy Eat World",
+  },
+  {
+    source: "https://m.media-amazon.com/images/I/81pe85y7VjL._AC_UY218_.jpg",
+    caption: "Are You Experienced? - Jimi Hendrix",
+  },
+  {
+    source: "https://m.media-amazon.com/images/I/516QQGRGOuL._AC_UY218_.jpg",
+    caption: "Man on the Moon: The End of Day - Kid Cudi",
+  },
+  {
+    source: "https://m.media-amazon.com/images/I/A1AfooJVwWL._AC_UY218_.jpg",
+    caption: "Man on the Moon III: The Chosen - Kid Cudi",
+  },
+  {
+    source: "https://m.media-amazon.com/images/I/71vkl3gRBgL._AC_UY218_.jpg",
+    caption: "Direct Hits - The Killers",
+  },
+  {
+    source: "https://m.media-amazon.com/images/I/71XIkcVprCL._AC_UY218_.jpg",
+    caption: "Born to Die - Lana Del Rey",
+  },
+  {
+    source: "https://m.media-amazon.com/images/I/91E+sAhJ8YL._AC_UY218_.jpg",
+    caption: "Paradise - Lana Del Rey",
+  },
+  {
+    source: "https://m.media-amazon.com/images/I/51OZtzFAOgL._AC_UY218_.jpg",
+    caption: "Lust for Life - Lana Del Rey",
+  },
+  {
+    source: "https://m.media-amazon.com/images/I/51CgMxpH7RL._AC_UY218_.jpg",
+    caption: "Good Kid, M.A.A.D City - Kendrick Lamar",
+  },
+  {
+    source: "https://m.media-amazon.com/images/I/71NUQhdZDJL._AC_UY218_.jpg",
+    caption: "To Pimp a Butterfly - Kendrick Lamar",
+  },
+  {
+    source: "https://m.media-amazon.com/images/I/41q3vSOVMSL._AC_UY218_.jpg",
+    caption: "DAMN. - Kendrick Lamar",
+  },
+  {
+    source: "https://m.media-amazon.com/images/I/81tDqtyx7yL._AC_UY218_.jpg",
+    caption: "Led Zeppelin - Led Zeppelin",
+  },
+  {
+    source: "https://m.media-amazon.com/images/I/41vds6f7rPL._AC_UY218_.jpg",
+    caption: "Led Zeppelin II - Led Zeppelin",
+  },
+  {
+    source: "https://m.media-amazon.com/images/I/81elx3TCpqL._AC_UY218_.jpg",
+    caption: "Led Zeppelin III - Led Zeppelin",
+  },
+  {
+    source: "https://m.media-amazon.com/images/I/81evsr3Oq0L._AC_UY218_.jpg",
+    caption: "Led Zeppelin IV - Led Zeppelin",
   },
 ];
 

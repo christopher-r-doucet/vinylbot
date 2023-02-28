@@ -411,4 +411,8 @@ bot.on("message", (ctx) => {
   // Use Long Polling for development
   bot.start();
 }*/
-bot.start();
+const app = express(); // or whatever you're using
+app.use(express.json()); // parse the JSON request body
+
+// "express" is also used as default if no argument is given.
+app.use(webhookCallback(bot, "express"));

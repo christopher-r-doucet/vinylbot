@@ -1,4 +1,5 @@
 import { Bot, webhookCallback } from "grammy";
+import { run } from "@grammyjs/runner";
 import express from 'express';
 
 // Create a bot using the Telegram token
@@ -378,16 +379,14 @@ const rollItResponses: RollItResponse[] = [
 ];
 
 bot.command("blaze", (ctx) => { 
-  const response = rollItResponses[Math.floor(Math.random() * 100 % rollItResponses.length)];
+  const response = rollItResponses[Math.floor(Math.random() * rollItResponses.length)];
   ctx.replyWithPhoto(response.source, { caption: response.caption });
 });
 
 // Suggest commands in the menu
 bot.api.setMyCommands([
-  { command: "blaze", description: "get a random vinyl" },
+  { command: "/blaze", description: "get a random vinyl" },
 ]);
 
 // Start the server
-  const app = express();
-  app.use(express.json());
-  app.use(webhookCallback(bot, "express"));
+run(bot);

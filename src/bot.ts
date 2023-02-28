@@ -407,9 +407,11 @@ bot.on("message", (ctx) => {
   // Use Long Polling for development
   bot.start();
 }*/
-const app = express(); // or whatever you're using
-app.use(express.json()); // parse the JSON request body
-
-// "express" is also used as default if no argument is given.
+const app = express();
+app.use(express.json());
 app.use(webhookCallback(bot, "express"));
-app.listen(process.env.PORT||3000)
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Bot listening on port ${PORT}`);
+});
+bot.start();

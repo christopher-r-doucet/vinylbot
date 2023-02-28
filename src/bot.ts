@@ -394,7 +394,6 @@ bot.api.setMyCommands([
 bot.on("message", (ctx) => {
   ctx.reply("Error. Please /blaze to get a random vinyl.");
 });
-bot.command("start");
 
 // Start the server
 

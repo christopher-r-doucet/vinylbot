@@ -397,7 +397,8 @@ bot.on("message", (ctx) => {
 bot.command("start");
 
 // Start the server
-/*if (process.env.NODE_ENV === "production") {
+
+/*if (process.env.NODE_ENV === "production") { 
   // Use Webhooks for the production server
   const app = express();
   app.use(express.json());

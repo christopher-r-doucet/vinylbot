@@ -1,4 +1,5 @@
 import { Bot, webhookCallback } from "grammy";
+import { run } from "@grammyjs/runner";
 import express from 'express';
 
 // Create a bot using the Telegram token
@@ -407,11 +408,4 @@ bot.on("message", (ctx) => {
   // Use Long Polling for development
   bot.start();
 }*/
-const app = express();
-app.use(express.json());
-app.use(webhookCallback(bot, "express"));
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`Bot listening on port ${PORT}`);
-});
-bot.start();
+run(bot);

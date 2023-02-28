@@ -1,12 +1,8 @@
 import { Bot, webhookCallback } from "grammy";
-import { chunk } from "lodash";
 import express from 'express';
 
 // Create a bot using the Telegram token
 const bot = new Bot(process.env.TELEGRAM_TOKEN || "");
-
-// Handle the /yo command to greet the user
-bot.command("yo", (ctx) => ctx.reply(`Yo ${ctx.from?.username}`));
 
 // Handle the /rollit command to fetch a random image from local storage
 type RollItResponse = { source: string ; caption: string }; 
@@ -416,3 +412,4 @@ app.use(express.json()); // parse the JSON request body
 
 // "express" is also used as default if no argument is given.
 app.use(webhookCallback(bot, "express"));
+app.listen(process.env.PORT||3000)

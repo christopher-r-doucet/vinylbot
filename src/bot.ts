@@ -385,12 +385,8 @@ bot.command("blaze", (ctx) => {
 
 // Suggest commands in the menu
 bot.api.setMyCommands([
-  { command: "/blaze", description: "get a random vinyl" },
+  { command: "blaze", description: "get a random vinyl" },
 ]);
-
-bot.on("message", (ctx) => {
-  ctx.reply("Error. Please /blaze to get a random vinyl.");
-});
 
 // Start the server
 

@@ -378,7 +378,7 @@ const rollItResponses: RollItResponse[] = [
   },
 ];
 
-bot.command("blaze", (ctx) => { 
+bot.on("blaze", (ctx) => { 
   const response = rollItResponses[Math.floor(Math.random() * 100 % rollItResponses.length)];
   ctx.replyWithPhoto(response.source, { caption: response.caption });
 });

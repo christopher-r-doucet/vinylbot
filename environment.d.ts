@@ -1,9 +1,7 @@
 declare global {
   namespace NodeJS {
     interface ProcessEnv {
-      TELEGRAM_TOKEN: string;
-      PORT: number;
-    }
+      TELEGRAM_TOKEN: string;    }
   }
 }
 

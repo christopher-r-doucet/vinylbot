@@ -105,7 +105,7 @@ const rollItResponses: RollItResponse[] = [
     caption: "The Chronic - Dr. Dre",
   },
   {
-    source: "hhttps://m.media-amazon.com/images/I/81T0IFXtnjL._AC_UY218_.jpg",
+    source: "https://m.media-amazon.com/images/I/81T0IFXtnjL._AC_UY218_.jpg",
     caption: "Blood on the Tracks - Bob Dylan",
   },
   {
